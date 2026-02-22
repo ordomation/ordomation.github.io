@@ -12,9 +12,9 @@
     <!-- Desktop Links -->
     <div class="nav-links desktop-only">
       <a href="#features" class="nav-link">Features</a>
-      <a href="#how-it-works" class="nav-link">How It Works</a>
-      <a href="#team" class="nav-link">Team</a>
-      <a href="#contact" class="btn-contact">Contact</a>
+      <a href="#how" class="nav-link">How It Works</a>
+      <a href="#story" class="nav-link">Founders</a>
+      <a href="#waitlist" class="btn-contact">Contact</a>
     </div>
 
     <!-- Mobile Hamburger -->
@@ -31,9 +31,9 @@
   <div class="mobile-menu-overlay" id="mobile-menu">
     <div class="mobile-menu-content">
       <a href="#features" class="mobile-link">Features</a>
-      <a href="#how-it-works" class="mobile-link">How It Works</a>
-      <a href="#team" class="mobile-link">Team</a>
-      <a href="#contact" class="btn-contact mobile-btn-contact">Contact</a>
+      <a href="#how" class="mobile-link">How It Works</a>
+      <a href="#story" class="mobile-link">Founders</a>
+      <a href="#waitlist" class="btn-contact mobile-btn-contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -204,7 +204,7 @@
     // 1. Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const overlay = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-btn-contact');
     
     let isMenuOpen = false;
 

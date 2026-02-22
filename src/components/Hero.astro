@@ -19,17 +19,17 @@
       </p>
 
       <div class="hero-actions">
-        <button class="btn btn-primary" id="btn-waitlist">
+        <a href="#waitlist" class="btn btn-primary" id="btn-waitlist">
           Join the Waitlist
           <div class="btn-glow"></div>
-        </button>
-        <button class="btn btn-secondary" id="btn-demo">
+        </a>
+        <a href="#livedemo" class="btn btn-secondary" id="btn-demo">
           Watch Demo
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-        </button>
+        </a>
       </div>
     </div>
 
@@ -501,10 +501,6 @@
       });
     }
     
-    // Smooth scroll demo button target placeholder
-    document.getElementById('btn-demo')?.addEventListener('click', () => {
-       const demoSection = document.getElementById('features') || document.getElementById('how-it-works');
-       demoSection?.scrollIntoView({ behavior: 'smooth' });
-    });
+
   });
 </script>

@@ -15,7 +15,29 @@ const currentYear = new Date().getFullYear();
         </p>
       </div>
 
-      <!-- Column 2: Legal -->
+      <!-- Column 2: Product -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Product</h4>
+        <ul class="footer-links">
+          <li><a href="#features" class="muted">Features</a></li>
+          <li><a href="#how" class="muted">How It Works</a></li>
+          <li><a href="#livedemo" class="muted">Live Demo</a></li>
+          <li><a href="#waitlist" class="muted">Pricing</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Company -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="#story" class="muted">About Us</a></li>
+          <li><a href="#story" class="muted">Founders</a></li>
+          <li><a href="https://www.linkedin.com/company/ordomation" target="_blank" rel="noopener noreferrer" class="muted">LinkedIn</a></li>
+          <li><a href="mailto:hello@ordomation.com" class="muted">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Legal -->
       <div class="footer-column">
         <h4 class="footer-heading">Legal</h4>
         <ul class="footer-links">
@@ -25,15 +47,7 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Column 3: Contact -->
-      <div class="footer-column">
-        <h4 class="footer-heading">Contact</h4>
-        <ul class="footer-links">
-          <li><a href="mailto:hello@ordomation.com" class="muted">hello@ordomation.com</a></li>
-          <li><a href="https://www.linkedin.com/company/ordomation" target="_blank" rel="noopener noreferrer" class="muted">LinkedIn</a></li>
-          <li class="muted mt-2">Denmark 🇩🇰</li>
-        </ul>
-      </div>
+
     </div>
 
     <div class="footer-bottom flex justify-between items-center">
@@ -59,7 +73,7 @@ const currentYear = new Date().getFullYear();
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: var(--space-2xl);
     margin-bottom: 80px;
   }
