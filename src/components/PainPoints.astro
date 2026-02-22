@@ -1,0 +1,203 @@
+---
+---
+<section class="section painpoints-section">
+  <div class="container painpoints-container">
+    <div class="painpoints-header">
+      <h2>We remove the repetitive.</h2>
+      <h2><span class="muted">You focus on what matters.</span></h2>
+    </div>
+
+    <div class="painpoints-list">
+      
+      <!-- Point 1 -->
+      <div class="pp-row">
+        <div class="pp-old">
+          <span class="pp-text">Manual invoice sorting</span>
+          <svg preserveAspectRatio="none" viewBox="0 0 100 10" class="strike-svg">
+            <path d="M0 5 Q 50 1, 100 5 M100 5 Q 50 9, 0 5 M0 5 L 100 5" fill="none" class="strike-path" />
+          </svg>
+        </div>
+        <div class="pp-new">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pp-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span class="pp-text-new">Automatic</span>
+        </div>
+      </div>
+
+      <!-- Point 2 -->
+      <div class="pp-row">
+        <div class="pp-old">
+          <span class="pp-text">Searching through emails</span>
+          <svg preserveAspectRatio="none" viewBox="0 0 100 10" class="strike-svg">
+            <path d="M0 5 Q 25 2, 50 6 T 100 4" fill="none" class="strike-path" />
+          </svg>
+        </div>
+        <div class="pp-new">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pp-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span class="pp-text-new">Instant</span>
+        </div>
+      </div>
+
+      <!-- Point 3 -->
+      <div class="pp-row">
+        <div class="pp-old">
+          <span class="pp-text">Spreadsheet chaos</span>
+          <svg preserveAspectRatio="none" viewBox="0 0 100 10" class="strike-svg">
+            <path d="M0 6 L 100 2" fill="none" class="strike-path" />
+          </svg>
+        </div>
+        <div class="pp-new">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pp-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span class="pp-text-new">Structured</span>
+        </div>
+      </div>
+
+      <!-- Point 4 -->
+      <div class="pp-row">
+        <div class="pp-old">
+          <span class="pp-text">Repetitive bookkeeping</span>
+          <svg preserveAspectRatio="none" viewBox="0 0 100 10" class="strike-svg">
+            <path d="M0 5 Q 50 8, 100 3 L 80 5 L 100 7" fill="none" class="strike-path" />
+          </svg>
+        </div>
+        <div class="pp-new">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pp-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span class="pp-text-new">Handled</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  .painpoints-section {
+    padding: 120px 0;
+    background-color: var(--bg-secondary);
+  }
+
+  .painpoints-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .painpoints-header {
+    margin-bottom: var(--space-2xl);
+    text-align: center;
+  }
+
+  .painpoints-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .pp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 500;
+  }
+
+  .pp-old {
+    position: relative;
+    display: inline-block;
+    transition: color 0.5s ease;
+  }
+
+  .pp-old.scratched {
+    color: var(--text-muted);
+  }
+
+  .strike-svg {
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    width: 110%;
+    height: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .strike-path {
+    stroke: #ef4444; /* Red strike */
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    /* Hidden initially */
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+
+  .pp-new {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--accent);
+    /* Hidden initially */
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .pp-arrow {
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 640px) {
+    .pp-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+    .pp-new {
+      padding-left: var(--space-lg);
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const rows = document.querySelectorAll('.pp-row');
+
+    rows.forEach((row, i) => {
+      const oldText = row.querySelector('.pp-old');
+      const strikePath = row.querySelector('.strike-path');
+      const newText = row.querySelector('.pp-new');
+
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: row,
+          start: "top 80%", // Animates when top of row hits 80% of viewport
+        }
+      });
+
+      // 1. Draw scratch
+      tl.to(strikePath, {
+        strokeDashoffset: 0,
+        duration: 0.5,
+        ease: "power2.inOut"
+      });
+
+      // 2. Dim old text
+      tl.add(() => {
+        oldText?.classList.add('scratched');
+      }, "-=0.2"); // starts slightly before scratch finishes
+
+      // 3. Reveal new text
+      tl.to(newText, {
+        opacity: 1,
+        x: 0,
+        duration: 0.4,
+        ease: "power2.out"
+      }, "-=0.1");
+
+    });
+  });
+</script>

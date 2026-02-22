@@ -1,77 +1,140 @@
 ---
 ---
-<section class="hero section">
+<section class="hero-section">
+  <!-- CSS Animated Gradient Background -->
+  <div class="hero-bg"></div>
+  
   <div class="container hero-content">
-    <h1 class="hero-title">Automation that understands your business</h1>
-    <p class="hero-subtitle">Intelligent document processing and bookkeeping automation for Danish small businesses. From inbox to organized archive, automatically.</p>
+    <h1 class="hero-headline">
+      Your business,<br/>
+      <span class="gradient-text">running itself.</span>
+    </h1>
+    <p class="hero-subtext muted">
+      Intelligent automation that learns, organizes, and optimizes.
+    </p>
+    
     <div class="hero-actions">
-      <a href="#features" class="btn btn-primary">Learn More</a>
-      <a href="https://github.com/ordomation" target="_blank" class="btn btn-secondary">View on GitHub</a>
+      <a href="#vision" class="btn-primary">
+        <span>See the Vision</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+      </a>
     </div>
   </div>
 </section>
 
 <style>
-  .hero {
-    min-height: 100vh;
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%);
-    position: relative;
     overflow: hidden;
   }
+
+  .hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    /* Deep dark to purple to pink mesh-like gradient */
+    background: linear-gradient(-45deg, #0a0a0a, #1e1b4b, #4c1d95, #831843, #0a0a0a);
+    background-size: 400% 400%;
+    animation: gradientMesh 20s ease infinite;
+    opacity: 0.6; /* Keep it subtle behind the dark theme text */
+  }
   
-  /* Subtle grid pattern background */
-  .hero::before {
+  /* Additional overlay to make sure text is readable and center is highlighted */
+  .hero-bg::after {
     content: '';
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background-image: 
-      linear-gradient(rgba(71, 85, 105, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(71, 85, 105, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
-    z-index: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 80%);
+  }
+
+  @keyframes gradientMesh {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: fadeUp 0.8s ease-out forwards;
+    /* Fade in animation setup */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease-out 0.5s forwards;
   }
 
-  .hero-title {
-    max-width: 800px;
+  .hero-headline {
     margin-bottom: var(--space-md);
-    color: var(--midnight);
+    max-width: 900px;
+    line-height: 1.1;
   }
-
-  .hero-subtitle {
+  
+  .hero-subtext {
+    font-size: clamp(18px, 2.5vw, 24px);
     max-width: 600px;
-    font-size: 20px;
-    color: var(--slate);
     margin-bottom: var(--space-xl);
   }
 
   .hero-actions {
     display: flex;
-    gap: var(--space-sm);
     justify-content: center;
-    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    background: rgba(255,255,255, 0.05);
+    border: 1px solid rgba(255,255,255, 0.1);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  .btn-primary:hover {
+    border-color: rgba(255,255,255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px var(--accent-glow);
+  }
+
+  .btn-primary:hover::before {
+    opacity: 1;
   }
 
   @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .btn-primary {
+      padding: 14px 28px;
+      font-size: 16px;
     }
   }
 </style>

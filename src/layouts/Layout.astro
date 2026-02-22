@@ -4,11 +4,11 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = "Intelligent document processing and bookkeeping automation for Danish small businesses. From inbox to organized archive, automatically." } = Astro.props;
+const { title, description = "Intelligent automation that learns, organizes, and optimizes. Your business, running itself." } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +17,12 @@ const { title, description = "Intelligent document processing and bookkeeping au
 
     <!-- Open Graph -->
     <meta property="og:title" content="Ordomation">
-    <meta property="og:description" content="Intelligent business automation for Danish small businesses">
+    <meta property="og:description" content="Intelligent business automation.">
     <meta property="og:image" content="/images/og-image.png">
     <meta property="og:url" content="https://ordomation.com">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <style is:global>

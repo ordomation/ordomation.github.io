@@ -1,0 +1,224 @@
+---
+---
+<section class="section founders-section">
+  <div class="container">
+    <div class="founders-intro">
+      <h2 class="founders-headline">Built by<br/><span class="gradient-text">passionate engineers.</span></h2>
+    </div>
+
+    <div class="founders-grid">
+      <!-- Thue -->
+      <div class="founder-card glass-panel group">
+        <div class="founder-avatar avatar-thue">
+          <span>TT</span>
+        </div>
+        <div class="founder-info">
+          <h3 class="founder-name">Thue Tonnesen</h3>
+          <p class="founder-role muted">Infrastructure</p>
+          <div class="founder-socials">
+            <a href="https://www.linkedin.com/in/thue-tonnesen-414475245/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://github.com/Thue-T" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Joachim -->
+      <div class="founder-card glass-panel group">
+        <div class="founder-avatar avatar-joachim">
+          <span>JG</span>
+        </div>
+        <div class="founder-info">
+          <h3 class="founder-name">Joachim Gensmann</h3>
+          <p class="founder-role muted">Strategy</p>
+          <div class="founder-socials">
+            <a href="https://www.linkedin.com/in/joachim-gensmann/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="founders-story">
+      <p class="story-text">
+        "Friends since HTX Haderslev. Building what small businesses deserve."
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .founders-section {
+    padding: 120px 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+  }
+
+  /* Subtle background glow */
+  .founders-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .founders-intro {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .founders-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .founder-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    padding: var(--space-xl);
+    border-radius: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .founder-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .founder-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 10px 20px -5px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-thue {
+    background: linear-gradient(135deg, var(--gradient-1), var(--bg-secondary));
+  }
+
+  .avatar-joachim {
+    background: linear-gradient(135deg, var(--gradient-2), var(--bg-secondary));
+  }
+
+  .founder-info {
+    text-align: center;
+  }
+
+  .founder-name {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .founder-role {
+    font-size: 16px;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .founder-socials {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  .founders-story {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .story-text {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .founders-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".founder-card", {
+      scrollTrigger: {
+        trigger: ".founders-grid",
+        start: "top 85%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+
+    gsap.from(".story-text", {
+      scrollTrigger: {
+        trigger: ".founders-story",
+        start: "top 90%",
+      },
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      delay: 0.4,
+      ease: "power2.out"
+    });
+  });
+</script>
