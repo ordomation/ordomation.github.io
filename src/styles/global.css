@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Ordomation Global Styles
+   ========================================================================== */
+
+/* CSS Custom Properties */
+:root {
+  /* Neutrals */
+  --midnight: #0f172a;
+  --slate: #475569;
+  --cloud: #f8fafc;
+  --white: #ffffff;
+
+  /* Accent */
+  --electric: #3b82f6;
+  --electric-hover: #2563eb;
+  --glow: #60a5fa;
+
+  /* Semantic */
+  --success: #22c55e;
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--midnight);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--electric);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--electric-hover);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--electric);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--electric-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--midnight);
+  border: 2px solid var(--slate);
+}
+
+.btn-secondary:hover {
+  border-color: var(--midnight);
+}
+
+/* Section */
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+.section-dark {
+  background-color: var(--midnight);
+  color: var(--white);
+}
+
+.section-light {
+  background-color: var(--cloud);
+}
+
+/* Cards */
+.card {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--slate);
+  color: var(--white);
+  border-radius: 9999px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+}
