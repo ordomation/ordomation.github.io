@@ -1,0 +1,147 @@
+---
+---
+<section class="section team-section">
+  <div class="container">
+    <div class="team-grid">
+      <!-- Founder 1 -->
+      <div class="team-card card">
+        <div class="team-photo">
+          <span class="photo-initials">TT</span>
+        </div>
+        <h3 class="team-name">Thue Tønnesen</h3>
+        <p class="team-role">Server Admin & Automation</p>
+        <p class="team-bio">
+          Builds the infrastructure that keeps everything running. Passionate about TrueNAS, Kubernetes, and making complex systems simple.
+        </p>
+        <div class="team-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ordomation" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Founder 2 -->
+      <div class="team-card card">
+        <div class="team-photo photo-joachim">
+          <span class="photo-initials">JK</span>
+        </div>
+        <h3 class="team-name">Joachim</h3>
+        <p class="team-role">Strategy & Growth</p>
+        <p class="team-bio">
+          Co-founder focused on strategy and growth. Bringing technical solutions to the market and solving real business problems.
+        </p>
+        <div class="team-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-story">
+      <p>
+        We met at HTX Haderslev, where our shared love for building things brought us together. From hardware projects to software systems, we've been collaborating on ideas ever since. Ordomation is where we bring automation to small businesses that deserve the same tools as the big players.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    padding: 96px 0;
+  }
+
+  .team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .team-card {
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--cloud);
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .photo-initials {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--slate);
+  }
+
+  .team-name {
+    margin-bottom: var(--space-xs);
+  }
+
+  .team-role {
+    color: var(--electric);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    font-size: 16px;
+  }
+
+  .team-bio {
+    color: var(--slate);
+    font-size: 16px;
+    margin-bottom: var(--space-lg);
+    flex-grow: 1;
+  }
+
+  .team-links {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .team-links a {
+    color: var(--slate);
+  }
+
+  .team-links a:hover {
+    color: var(--electric);
+  }
+
+  .team-story {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--cloud);
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: 16px;
+  }
+
+  .team-story p {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: var(--slate);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .team-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xl);
+    }
+    
+    .team-story {
+      padding: var(--space-md);
+    }
+  }
+</style>

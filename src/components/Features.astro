@@ -1,0 +1,87 @@
+---
+---
+<section id="features" class="section section-light">
+  <div class="container">
+    <div class="features-grid">
+      <!-- Card 1 -->
+      <div class="card feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </div>
+        <h3>Email Capture</h3>
+        <p>Monitor multiple email accounts. Extract attachments automatically. No more manual downloading.</p>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="card feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+        </div>
+        <h3>AI Classification</h3>
+        <p>Our AI reads invoices like a human. Identifies suppliers, amounts, dates. Learns your business patterns.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
+        <h3>Bookkeeping Ready</h3>
+        <p>Files organized by quarter, numbered sequentially, ready for e-conomic or Dinero. SKAT compliant from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-light {
+    padding: 96px 0;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .feature-card {
+    min-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-icon {
+    width: 64px;
+    height: 64px;
+    background-color: var(--cloud);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--electric);
+    margin-bottom: var(--space-md);
+  }
+
+  .feature-card h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .feature-card p {
+    color: var(--slate);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
