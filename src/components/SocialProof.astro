@@ -1,0 +1,193 @@
+---
+---
+<section class="section social-proof" id="social">
+  <div class="container social-container">
+    <p class="social-label muted">Currently automating for:</p>
+    
+    <div class="logo-cloud">
+      <div class="logo-text">TST Maskiner</div>
+      <div class="logo-text">Baskas</div>
+      <div class="logo-text">GreenGuard</div>
+      <div class="logo-text">Glare</div>
+    </div>
+
+    <div class="social-metrics">
+      <div class="metric">
+        <div class="metric-value-container">
+          <span class="metric-value counter" data-target="14000">0</span><span class="metric-plus">+</span>
+        </div>
+        <span class="metric-label muted">emails processed</span>
+      </div>
+      
+      <div class="metric-divider"></div>
+      
+      <div class="metric">
+        <div class="metric-value-container">
+          <span class="metric-value counter" data-target="4">0</span>
+        </div>
+        <span class="metric-label muted">businesses automated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-proof {
+    padding: 80px 0;
+    background-color: var(--bg-secondary);
+    /* Subtle fade from primary to secondary background */
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .social-label {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .logo-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2xl);
+    width: 100%;
+  }
+
+  .logo-text {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .logo-text:hover {
+    color: var(--accent);
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .social-metrics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-top: var(--space-md);
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metric-value-container {
+    display: flex;
+    align-items: baseline;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.1;
+  }
+
+  .metric-plus {
+    font-size: clamp(24px, 4vw, 36px);
+    color: var(--accent);
+    -webkit-text-fill-color: var(--accent); /* Override gradient for the plus */
+    margin-left: 2px;
+  }
+
+  .metric-label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .metric-divider {
+    width: 1px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 640px) {
+    .logo-cloud {
+      gap: var(--space-lg);
+    }
+    .social-metrics {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .metric-divider {
+      width: 60px;
+      height: 1px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade in logos
+    gsap.from('.logo-text', {
+      scrollTrigger: {
+        trigger: '.logo-cloud',
+        start: 'top 85%',
+      },
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: 'power2.out'
+    });
+
+    // Animate counters
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target') || '0', 10);
+      
+      ScrollTrigger.create({
+        trigger: counter,
+        start: 'top 90%',
+        once: true,
+        onEnter: () => {
+          gsap.to(counter, {
+            innerHTML: target,
+            duration: 2,
+            ease: "power2.out",
+            snap: { innerHTML: 1 },
+            onUpdate: function() {
+              // Add commas for thousands
+              if (target >= 1000) {
+                 counter.innerHTML = Math.round(this.targets()[0].innerHTML).toLocaleString('en-US');
+              } else {
+                 counter.innerHTML = Math.round(this.targets()[0].innerHTML).toString();
+              }
+            }
+          });
+        }
+      });
+    });
+  });
+</script>

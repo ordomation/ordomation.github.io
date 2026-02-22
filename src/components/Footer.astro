@@ -1,82 +1,148 @@
 ---
+const currentYear = new Date().getFullYear();
 ---
-<footer class="footer-section">
+<footer class="footer">
   <div class="container">
-    <div class="footer-layout">
-      <!-- Left Column -->
+    
+    <div class="footer-grid">
+      <!-- Column 1: Brand -->
       <div class="footer-brand">
-        <h2 class="footer-logo">ORDOMATION</h2>
-        <p class="footer-copyright muted">&copy; 2026</p>
+        <a href="/" class="logo font-sans font-bold text-xl tracking-tight">
+          <span class="logo-o">O</span>RDOMATION
+        </a>
+        <p class="footer-desc muted mt-4">
+          Intelligent accounting automation for Danish SMEs. We eliminate manual data entry so you can focus on growth.
+        </p>
       </div>
 
-      <!-- Right Column -->
-      <div class="footer-links">
-        <a href="mailto:hello@ordomation.com" class="footer-link">hello@ordomation.com</a>
-        <p class="footer-location muted">Denmark 🇩🇰</p>
-        <div class="footer-social">
-          <a href="https://github.com/ordomation" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        </div>
+      <!-- Column 2: Legal -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#" class="muted">Privacy Policy</a></li>
+          <li><a href="#" class="muted">Terms of Service</a></li>
+          <li><a href="#" class="muted">GDPR Compliance</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div class="footer-column">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@ordomation.com" class="muted">hello@ordomation.com</a></li>
+          <li><a href="https://www.linkedin.com/company/ordomation" target="_blank" rel="noopener noreferrer" class="muted">LinkedIn</a></li>
+          <li class="muted mt-2">Denmark 🇩🇰</li>
+        </ul>
       </div>
     </div>
+
+    <div class="footer-bottom flex justify-between items-center">
+      <p class="copyright muted">
+        &copy; {currentYear} Ordomation. All rights reserved.
+      </p>
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="muted">All systems operational</span>
+      </div>
+    </div>
+
   </div>
 </footer>
 
 <style>
-  .footer-section {
-    padding: var(--space-3xl) 0 var(--space-xl);
-    background-color: var(--bg-primary);
+  .footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .footer-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .footer-logo {
-    font-size: 24px;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-sm);
-    color: var(--text-primary);
-  }
-
-  .footer-copyright {
+    background-color: var(--bg-primary);
+    padding: 80px 0 40px;
     font-size: 14px;
-    margin: 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: 80px;
+  }
+
+  .logo-o {
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-right: 1px;
+    font-size: 22px;
+  }
+
+  .footer-desc {
+    max-width: 300px;
+    line-height: 1.6;
+    margin-top: var(--space-md);
+  }
+
+  .footer-heading {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .footer-links {
-    text-align: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs);
+    gap: var(--space-md);
   }
 
-  .footer-link {
-    font-size: 16px;
-    transition: color 0.3s ease;
+  .footer-links a {
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  .footer-location {
-    font-size: 14px;
-    margin: 0;
-  }
-
-  /* Hover states */
-  .footer-link:hover {
+  .footer-links a:hover {
     color: var(--accent);
   }
 
-  @media (max-width: 640px) {
-    .footer-layout {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: var(--space-xl);
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981; /* Emerald green */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
     }
-    
-    .footer-links {
-      text-align: left;
+
+    .footer-desc {
+      max-width: 100%;
+    }
+
+    .footer-bottom {
+      flex-direction: column-reverse;
+      gap: var(--space-lg);
+      text-align: center;
     }
   }
 </style>

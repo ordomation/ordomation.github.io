@@ -1,0 +1,139 @@
+---
+---
+<section class="section problem-section" id="problem">
+  <div class="problem-gradient"></div>
+  <div class="container problem-container">
+    
+    <div class="problem-content">
+      <h2 class="problem-quote">
+        "Every morning, 47 new emails.<br/>
+        Buried somewhere: the invoice you need for VAT."
+      </h2>
+      
+      <div class="problem-divider"></div>
+      
+      <p class="problem-hook">
+        Sound familiar?
+      </p>
+      
+      <p class="problem-explanation muted">
+        You're not bad at bookkeeping.<br/>
+        The tools just weren't built for small businesses.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .problem-section {
+    padding: 200px 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-gradient {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .problem-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .problem-content {
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .problem-quote,
+  .problem-divider,
+  .problem-hook,
+  .problem-explanation {
+    /* Initially hidden for GSAP stagger */
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .problem-quote {
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xl);
+    font-style: italic;
+  }
+
+  .problem-divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--text-muted);
+    opacity: 0.3; /* Adjusted logic for GSAP: we'll animate it to this baseline */
+    margin-bottom: var(--space-xl);
+  }
+
+  .problem-hook {
+    font-size: clamp(20px, 3vw, 24px);
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .problem-explanation {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .problem-section {
+      padding: 120px 0;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const elements = [
+      '.problem-quote',
+      '.problem-divider',
+      '.problem-hook',
+      '.problem-explanation'
+    ];
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.problem-section',
+        start: 'top 70%',
+      }
+    });
+
+    // Animate quote specifically to 1 opacity
+    tl.to('.problem-quote', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
+      // Divider has a target opacity of 0.3
+      .to('.problem-divider', { opacity: 0.3, y: 0, duration: 0.8, ease: 'power2.out' }, "-=0.6")
+      // Hook and explanation to 1 opacity
+      .to('.problem-hook', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, "-=0.5")
+      .to('.problem-explanation', { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, "-=0.5");
+  });
+</script>

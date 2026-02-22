@@ -1,22 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
-import Journey from '../components/Journey.astro';
-import Vision from '../components/Vision.astro';
-import PainPoints from '../components/PainPoints.astro';
+import SocialProof from '../components/SocialProof.astro';
+import Problem from '../components/Problem.astro';
+import LiveDemo from '../components/LiveDemo.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Features from '../components/Features.astro';
 import Benefits from '../components/Benefits.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Founders from '../components/Founders.astro';
+import Waitlist from '../components/Waitlist.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Ordomation - Intelligent Business Automation">
+	<Nav />
 	<main>
 		<Hero />
-		<Journey />
-		<Vision />
-		<PainPoints />
+		<SocialProof />
+		<Problem />
+		<LiveDemo />
+		<HowItWorks />
+		<Features />
 		<Benefits />
+		<Testimonials />
 		<Founders />
+		<Waitlist />
 	</main>
 	<Footer />
 </Layout>

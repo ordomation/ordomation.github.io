@@ -1,0 +1,225 @@
+---
+---
+<section class="section how-it-works" id="how">
+  <div class="container how-container">
+    <div class="how-header">
+      <h2>Three steps to <span class="gradient-text">absolute clarity.</span></h2>
+    </div>
+
+    <div class="steps-wrapper">
+      
+      <!-- The background track for the connecting line -->
+      <div class="step-line-track"></div>
+      
+      <!-- The animated glowing line that draws on scroll -->
+      <div class="step-line-progress" id="stepProgressLine"></div>
+
+      <div class="step-list">
+        
+        <!-- Step 1 -->
+        <div class="step-item">
+          <div class="step-number"><span class="gradient-text">1</span></div>
+          <div class="step-content glass-panel">
+            <h3 class="step-title">Connect</h3>
+            <p class="step-desc muted">
+              Simply forward your invoices to your dedicated Ordomation email address. Or drop them in our portal. We handle the rest.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item">
+          <div class="step-number"><span class="gradient-text">2</span></div>
+          <div class="step-content glass-panel">
+            <h3 class="step-title">Automate</h3>
+            <p class="step-desc muted">
+              Our AI instantly extracts all necessary data (VAT, dates, amounts) and organizes the files into SKAT-compliant folders.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item">
+          <div class="step-number"><span class="gradient-text">3</span></div>
+          <div class="step-content glass-panel">
+            <h3 class="step-title">Relax</h3>
+            <p class="step-desc muted">
+              Export a perfect, ready-to-book index file for your accountant. Never search your inbox for a missing invoice again.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    padding: 120px 0;
+    position: relative;
+    background-color: var(--bg-primary);
+  }
+
+  .how-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .steps-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  /* Connecting Line Vertical */
+  .step-line-track {
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 40px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 1;
+  }
+
+  .step-line-progress {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 2px;
+    height: 0; /* GSAP animates this */
+    background: linear-gradient(to bottom, var(--gradient-1), var(--gradient-3));
+    box-shadow: 0 0 15px 2px rgba(139, 92, 246, 0.5);
+    z-index: 2;
+  }
+
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+    position: relative;
+    z-index: 3;
+  }
+
+  .step-item {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .step-number {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: var(--bg-secondary);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+    /* transition is applied so it lights up when the line hits it */
+    transition: all 0.3s ease;
+  }
+
+  .step-number.active {
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 0 20px var(--accent);
+    background: rgba(10, 10, 10, 0.9);
+  }
+
+  .step-content {
+    flex: 1;
+    padding: var(--space-xl);
+    border-radius: 16px;
+    transform: translateY(20px);
+    opacity: 0; /* GSAP fades this in */
+  }
+
+  .step-title {
+    margin-bottom: var(--space-sm);
+    font-size: 24px;
+    color: var(--text-primary);
+  }
+
+  .step-desc {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .step-line-track, .step-line-progress {
+      left: 30px; /* Reduced for mobile */
+    }
+    .step-number {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
+    .step-item {
+      gap: var(--space-md);
+    }
+    .step-content {
+      padding: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const stepsWrapper = document.querySelector('.steps-wrapper');
+    const progressBar = document.getElementById('stepProgressLine');
+    const stepContents = document.querySelectorAll('.step-content');
+    const stepNumbers = document.querySelectorAll('.step-number');
+
+    if (!stepsWrapper || !progressBar) return;
+
+    // Animate the line drawing down based on scroll
+    ScrollTrigger.create({
+      trigger: stepsWrapper,
+      start: 'top 50%',
+      end: 'bottom 50%',
+      scrub: 1, // Smooth scrubbing
+      onUpdate: (self) => {
+        // self.progress goes from 0 to 1
+        gsap.to(progressBar, { height: `${self.progress * 100}%`, duration: 0.1 });
+        
+        // Highlight active numbers based on progress
+        stepNumbers.forEach((num, index) => {
+          // roughly divide the progress into thirds: 0, 0.5, 1.0 (approximations)
+          const targetProgress = index / (stepNumbers.length - 1);
+          // if overall progress is close to or past this step's progress mark
+          if (self.progress >= targetProgress - 0.1) {
+            num.classList.add('active');
+          } else {
+            num.classList.remove('active');
+          }
+        });
+      }
+    });
+
+    // Fade in the step content boxes as you scroll to them
+    stepContents.forEach((box, i) => {
+      gsap.to(box, {
+        scrollTrigger: {
+          trigger: box,
+          start: 'top 80%',
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out'
+      });
+    });
+  });
+</script>

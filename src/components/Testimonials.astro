@@ -1,0 +1,213 @@
+---
+---
+<section class="section testimonials-section" id="testimonials">
+  <div class="container relative">
+    
+    <!-- Background glow -->
+    <div class="testimonial-glow"></div>
+
+    <div class="testimonial-header">
+      <h2>Trusted by those who <span class="gradient-text">know.</span></h2>
+      <p class="section-subtitle muted">Built by founders, for founders.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card glass-panel">
+        <div class="quote-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <p class="testimonial-quote">"We built Ordomation because we were tired of spending our weekends sorting through email attachments and matching them with bank exports. It's the tool we desperately needed for our own businesses."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar placeholder-avatar">
+            <span class="initial">T</span>
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">Thue Tonnesen</h4>
+            <span class="author-role muted">Co-Founder</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card glass-panel">
+        <div class="quote-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <p class="testimonial-quote">"The accuracy of the data extraction is what sets this apart. It doesn't just grab a random number; it understands context, distinguishing VAT from total amounts perfectly. It's basically bulletproof."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar placeholder-avatar">
+            <span class="initial">J</span>
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">Joachim Ovesen</h4>
+            <span class="author-role muted">Co-Founder</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card glass-panel">
+        <div class="quote-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <p class="testimonial-quote">"I used to dread the end of the quarter. Now I just forward my emails when they arrive and forget about it. When my accountant asks for the documentation, I just share a single perfectly organized folder."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar placeholder-avatar">
+             <span class="initial">M</span>
+          </div>
+          <div class="author-info">
+            <h4 class="author-name">Mikkel</h4>
+            <span class="author-role muted">SME Owner (Beta User)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .testimonial-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-subtitle {
+    margin-top: var(--space-sm);
+    font-size: clamp(16px, 2vw, 20px);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-card {
+    padding: var(--space-xl);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(14, 14, 14, 0.6);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), 
+                0 0 0 1px rgba(139, 92, 246, 0.3) inset;
+    background: rgba(20, 20, 20, 0.8);
+  }
+
+  .quote-icon {
+    margin-bottom: var(--space-md);
+    color: var(--accent);
+    opacity: 0.5;
+  }
+
+  .testimonial-quote {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+    flex-grow: 1;
+    color: var(--text-primary);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: var(--space-lg);
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .placeholder-avatar {
+    background: linear-gradient(135deg, var(--bg-secondary), rgba(255,255,255,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .placeholder-avatar .initial {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .author-name {
+    font-size: 16px;
+    margin: 0 0 4px 0;
+  }
+
+  .author-role {
+    font-size: 14px;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonial-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from('.testimonial-card', {
+      scrollTrigger: {
+        trigger: '.testimonial-grid',
+        start: 'top 85%',
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+  });
+</script>

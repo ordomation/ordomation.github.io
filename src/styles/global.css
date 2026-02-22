@@ -13,9 +13,18 @@
   --text-muted: #737373;
   --accent: #3b82f6;
   --accent-glow: rgba(59, 130, 246, 0.5);
+
+  /* Gradients */
   --gradient-1: #6366f1;
   --gradient-2: #8b5cf6;
   --gradient-3: #ec4899;
+
+  /* New Additions */
+  --accent-hover: #2563eb;
+  --success: #22c55e;
+  --glass-bg: rgba(26, 26, 26, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-blur: 16px;
 
   /* Spacing */
   --space-xs: 8px;
@@ -26,20 +35,23 @@
   --space-2xl: 64px;
   --space-3xl: 96px;
   --space-4xl: 128px;
+  --space-5xl: 160px;
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  scroll-behavior: auto; /* Let GSAP handle scrolling when needed */
+  scroll-behavior: auto;
   background: var(--bg-primary);
 }
 
@@ -51,11 +63,16 @@ body {
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+  overflow-x: hidden;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.2;
 }
 
@@ -104,10 +121,10 @@ a:hover {
 
 /* Utilities */
 .glass-panel {
-  background: rgba(26, 26, 26, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
 }
 
 .gradient-text {
@@ -118,17 +135,28 @@ a:hover {
   color: transparent;
 }
 
+.gradient-fill {
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Hide scrollbar for a cleaner look */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--bg-secondary);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }

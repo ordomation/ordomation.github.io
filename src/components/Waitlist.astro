@@ -1,0 +1,269 @@
+---
+---
+<section class="section waitlist-section" id="waitlist">
+  <div class="container waitlist-container">
+    <div class="waitlist-card glass-panel">
+      
+      <!-- Animated Border Glow -->
+      <div class="border-glow-wrapper">
+        <div class="border-glow"></div>
+      </div>
+
+      <div class="waitlist-content">
+        <h2>Ready to get your <span class="gradient-text">weekends back?</span></h2>
+        <p class="waitlist-subtitle muted">Join the waitlist. We are onboarding new specific beta users weekly.</p>
+        
+        <form class="waitlist-form" id="waitlistForm">
+          <div class="input-group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="input-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <input type="email" id="emailInput" placeholder="Enter your work email" required aria-label="Work Email Address">
+            <button type="submit" class="btn btn-primary waitlist-btn">Join Waitlist</button>
+          </div>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+        
+        <div class="waitlist-footer muted">
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% GDPR Compliant</span>
+          <span class="dot">•</span>
+          <span>No credit card required</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .waitlist-section {
+    padding: 140px 0;
+    position: relative;
+    background-color: var(--bg-primary);
+  }
+
+  .waitlist-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .waitlist-card {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px 40px;
+    border-radius: 32px;
+    text-align: center;
+    background: rgba(15, 15, 15, 0.7);
+    overflow: hidden;
+  }
+
+  /* Animated Border using conic-gradient spinning */
+  .border-glow-wrapper {
+    position: absolute;
+    inset: -2px;
+    border-radius: 34px;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.5; /* Subtle by default */
+    transition: opacity 0.4s ease;
+  }
+
+  .waitlist-card:hover .border-glow-wrapper,
+  .waitlist-card:focus-within .border-glow-wrapper {
+    opacity: 1;
+  }
+
+  .border-glow {
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg, transparent 70%, var(--gradient-1) 80%, var(--gradient-2) 90%, transparent 100%);
+    animation: spin 6s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .waitlist-content {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-primary); /* Masks the inner glow to act as a border */
+    border-radius: 30px;
+    padding: 60px 40px;
+    margin: -60px -40px; /* Offset parent padding to make mask full size */
+  }
+
+  .waitlist-content h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: var(--space-sm);
+  }
+
+  .waitlist-subtitle {
+    font-size: 18px;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .waitlist-form {
+    max-width: 500px;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .input-group {
+    position: relative;
+    display: flex;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .input-group:focus-within {
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+                inset 0 0 10px rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+  }
+
+  .input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 16px 20px 16px 50px;
+    color: var(--text-primary);
+    font-size: 16px;
+    outline: none;
+    border-radius: 100px;
+  }
+
+  .input-group input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .waitlist-btn {
+    border-radius: 100px;
+    padding: 0 32px;
+    height: 48px;
+    margin: 2px 0 2px 4px;
+    font-weight: 600;
+  }
+
+  .form-status {
+    margin-top: var(--space-sm);
+    font-size: 14px;
+    min-height: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .waitlist-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    font-size: 13px;
+  }
+
+  .waitlist-footer span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dot {
+    opacity: 0.3;
+  }
+
+  @media (max-width: 600px) {
+    .waitlist-card {
+      padding: 40px 20px;
+    }
+    
+    .waitlist-content {
+      padding: 40px 20px;
+      margin: -40px -20px;
+    }
+
+    .input-group {
+      flex-direction: column;
+      background: transparent;
+      border: none;
+      padding: 0;
+      gap: 12px;
+    }
+
+    .input-group input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+      height: 56px;
+    }
+
+    .input-group:focus-within {
+      box-shadow: none;
+    }
+
+    .input-group input:focus {
+      border-color: rgba(99, 102, 241, 0.5);
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+
+    .waitlist-btn {
+      width: 100%;
+      margin: 0;
+      height: 56px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from('.waitlist-card', {
+      scrollTrigger: {
+        trigger: '.waitlist-section',
+        start: 'top 85%',
+      },
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    // Form logic mock for demonstration
+    const form = document.getElementById('waitlistForm');
+    const status = document.getElementById('formStatus');
+    const input = document.getElementById('emailInput') as HTMLInputElement;
+
+    if (form && status && input) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        if (input.value) {
+          const btn = form.querySelector('button');
+          if(btn) btn.innerHTML = '<span class="loader"></span>';
+          
+          // Mock API call
+          setTimeout(() => {
+            if(btn) btn.innerHTML = 'Opt-in Successful';
+            status.style.color = 'var(--accent)';
+            status.textContent = "You're on the list. We'll be in touch soon.";
+            input.value = '';
+          }, 1000);
+        }
+      });
+    }
+  });
+</script>

@@ -1,12 +1,39 @@
 ---
 ---
+<!-- Navigation -->
 <nav class="nav" id="main-nav">
   <div class="container nav-content">
-    <a href="/" class="logo">ORDOMATION</a>
-    <div class="nav-links">
-      <a href="https://github.com/ordomation" target="_blank" aria-label="GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-      </a>
+    
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <span class="logo-o">O</span>RDOMATION
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="nav-links desktop-only">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="#contact" class="btn-contact">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button class="mobile-menu-btn mobile-only" id="mobile-menu-btn" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#how-it-works" class="mobile-link">How It Works</a>
+      <a href="#team" class="mobile-link">Team</a>
+      <a href="#contact" class="btn-contact mobile-btn-contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -22,40 +49,195 @@
     display: flex;
     align-items: center;
     background-color: transparent;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
   }
+
+  /* Applied via GSAP on scroll */
   .nav.scrolled {
-    background-color: var(--white);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
+
   .nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
+
   .logo {
     font-weight: 700;
+    font-size: 20px;
     letter-spacing: 0.05em;
-    color: var(--midnight);
-  }
-  .nav-links a {
-    color: var(--midnight);
+    color: var(--text-primary);
     display: flex;
     align-items: center;
   }
-  .nav-links a:hover {
-    color: var(--electric);
+
+  .logo-o {
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-right: 1px;
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+    color: var(--text-primary);
+  }
+
+  .btn-contact {
+    background-color: var(--accent);
+    color: var(--text-primary);
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-contact:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+  }
+
+  .desktop-only { display: flex; }
+  .mobile-only { display: none; }
+
+  /* Mobile Button */
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001; /* Above overlay */
+  }
+
+  /* Mobile Overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: -1; 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-menu-overlay.active .mobile-menu-content {
+    transform: translateY(0);
+  }
+
+  .mobile-link {
+    font-size: 24px;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+
+  .mobile-link:hover {
+    opacity: 1;
+  }
+
+  .mobile-btn-contact {
+    margin-top: var(--space-md);
+    padding: 12px 32px;
+    font-size: 18px;
+  }
+
+
+  @media (max-width: 768px) {
+    .nav { height: 56px; }
+    .desktop-only { display: none; }
+    .mobile-only { display: block; }
   }
 </style>
 
 <script>
-  const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const overlay = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    
+    let isMenuOpen = false;
+
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        overlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Morph hamburger to X (simplified here using rotation)
+        gsap.to(btn, { rotation: 90, duration: 0.3 });
+      } else {
+        overlay?.classList.remove('active');
+        document.body.style.overflow = '';
+        gsap.to(btn, { rotation: 0, duration: 0.3 });
+      }
+    };
+
+    btn?.addEventListener('click', toggleMenu);
+    
+    // Close on click link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if(isMenuOpen) toggleMenu();
+      });
+    });
+
+    // 2. Scroll Animation for Nav background
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      start: "top -50", // When user scrolls down 50px
+      onEnter: () => document.getElementById('main-nav')?.classList.add('scrolled'),
+      onLeaveBack: () => document.getElementById('main-nav')?.classList.remove('scrolled'),
+    });
   });
 </script>

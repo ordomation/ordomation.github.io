@@ -1,23 +1,93 @@
 ---
 ---
-<section class="hero-section">
-  <!-- CSS Animated Gradient Background -->
-  <div class="hero-bg"></div>
-  
-  <div class="container hero-content">
-    <h1 class="hero-headline">
-      Your business,<br/>
-      <span class="gradient-text">running itself.</span>
-    </h1>
-    <p class="hero-subtext muted">
-      Intelligent automation that learns, organizes, and optimizes.
-    </p>
-    
-    <div class="hero-actions">
-      <a href="#vision" class="btn-primary">
-        <span>See the Vision</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-      </a>
+<section class="hero-section" id="hero">
+  <!-- Dynamic Backgrounds -->
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-bg-noise"></div>
+  <div class="hero-bg-grid"></div>
+
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Every invoice. Every receipt.<br />
+        <span class="gradient-text">Organized before you blink.</span>
+      </h1>
+      
+      <p class="hero-subtitle muted">
+        AI-powered document automation for Danish small businesses. 
+        From inbox chaos to SKAT-ready books, automatically.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="btn-waitlist">
+          Join the Waitlist
+          <div class="btn-glow"></div>
+        </button>
+        <button class="btn btn-secondary" id="btn-demo">
+          Watch Demo
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Visualization / Dashboard 3D Mockup -->
+    <div class="hero-visual">
+      <div class="dashboard-mockup glass-panel">
+        
+        <!-- Mockup Header -->
+        <div class="mockup-header">
+          <div class="window-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            Search invoices, suppliers, dates...
+          </div>
+        </div>
+
+        <!-- Mockup Body (Email flow) -->
+        <div class="mockup-body">
+          <!-- Left: Inbox -->
+          <div class="mockup-column inbox-col">
+            <div class="mockup-pill inbox-pill badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>hello@baskas.dk</span>
+            </div>
+            <div class="mockup-doc doc-1"></div>
+            <div class="mockup-doc doc-2"></div>
+            <div class="mockup-doc doc-3"></div>
+          </div>
+
+          <!-- Middle: Processing -->
+          <div class="mockup-column process-col">
+            <div class="ai-orb">
+              <div class="orb-core"></div>
+              <div class="orb-ring ring-1"></div>
+              <div class="orb-ring ring-2"></div>
+            </div>
+            <svg class="connection-line line-1" preserveAspectRatio="none" viewBox="0 0 100 100">
+               <path d="M0,50 C50,50 50,50 100,50" />
+            </svg>
+            <svg class="connection-line line-2" preserveAspectRatio="none" viewBox="0 0 100 100">
+               <path d="M0,50 C50,50 50,50 100,50" />
+            </svg>
+          </div>
+
+          <!-- Right: Folders -->
+          <div class="mockup-column folder-col">
+            <div class="mockup-pill folder-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              <span>Q1_2026/Baskas</span>
+            </div>
+            <div class="mockup-file">001_invoice_14_01.pdf</div>
+            <div class="mockup-file">002_receipt_15_01.pdf</div>
+            <div class="mockup-file text-muted">Awaiting sync...</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -25,116 +95,416 @@
 <style>
   .hero-section {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 800px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 120px 0 60px;
     overflow: hidden;
   }
 
-  .hero-bg {
+  /* Layered Backgrounds */
+  .hero-bg-gradient {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 0;
-    /* Deep dark to purple to pink mesh-like gradient */
-    background: linear-gradient(-45deg, #0a0a0a, #1e1b4b, #4c1d95, #831843, #0a0a0a);
-    background-size: 400% 400%;
-    animation: gradientMesh 20s ease infinite;
-    opacity: 0.6; /* Keep it subtle behind the dark theme text */
-  }
-  
-  /* Additional overlay to make sure text is readable and center is highlighted */
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, transparent 0%, var(--bg-primary) 80%);
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    opacity: 0.4; /* Spec requires reduction to 0.4 */
+    z-index: -3;
+    animation: pulseGradient 15s ease-in-out infinite alternate;
   }
 
-  @keyframes gradientMesh {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  .hero-bg-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.03; /* Spec required 0.03 */
+    z-index: -2;
+    pointer-events: none;
   }
 
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    /* Subtle grid pattern */
+    background: linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+  }
+
+  @keyframes pulseGradient {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 0.3; }
+  }
+
+  .hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Fade in animation setup */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s ease-out 0.5s forwards;
+    gap: var(--space-3xl);
   }
 
-  .hero-headline {
-    margin-bottom: var(--space-md);
-    max-width: 900px;
-    line-height: 1.1;
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Hidden initially for GSAP */
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .hero-subtext {
-    font-size: clamp(18px, 2.5vw, 24px);
+
+  .hero-title {
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(18px, 2.5vw, 22px);
     max-width: 600px;
-    margin-bottom: var(--space-xl);
+    margin: 0 auto var(--space-xl);
   }
 
   .hero-actions {
     display: flex;
+    gap: var(--space-sm);
     justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 14px 28px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .btn-primary {
+    background: var(--accent);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px 32px;
-    border-radius: 9999px;
-    background: rgba(255,255,255, 0.05);
-    border: 1px solid rgba(255,255,255, 0.1);
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 18px;
     overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
   }
 
   .btn-primary:hover {
-    border-color: rgba(255,255,255, 0.3);
+    background: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 40px -10px var(--accent-glow);
   }
 
-  .btn-primary:hover::before {
+  .btn-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%; height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .btn-primary:hover .btn-glow {
     opacity: 1;
   }
 
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-secondary:hover .btn-icon {
+    transform: translateX(4px);
+  }
+
+  /* Dashboard Mockup (3D CSS perspective) */
+  .hero-visual {
+    width: 100%;
+    max-width: 1000px;
+    perspective: 1000px;
+    opacity: 0; /* JS fade in */
+    transform: translateY(40px);
+  }
+
+  .dashboard-mockup {
+    width: 100%;
+    background: rgba(10, 10, 10, 0.7);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.8),
+                0 0 0 1px rgba(255,255,255,0.05) inset;
+    overflow: hidden;
+    transform: rotateX(15deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease; /* For subtle parallax */
+  }
+
+  .mockup-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .window-dots {
+    display: flex;
+    gap: 6px;
+    margin-right: 20px;
+  }
+  .window-dots span {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #333;
+  }
+  .window-dots span:nth-child(1) { background: #ed6a5e; }
+  .window-dots span:nth-child(2) { background: #f4bf4f; }
+  .window-dots span:nth-child(3) { background: #61c554; }
+
+  .mockup-search {
+    flex: 1;
+    max-width: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+  }
+
+  .mockup-body {
+    display: flex;
+    padding: var(--space-xl);
+    min-height: 300px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mockup-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 250px;
+    z-index: 2;
+  }
+
+  .mockup-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .inbox-pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .badge::after {
+    content: '3';
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px; height: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  .mockup-doc {
+    background: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(255,255,255,0.1);
+    height: 48px;
+    border-radius: 6px;
+  }
+
+  .folder-header {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .mockup-file {
+    background: rgba(255,255,255,0.05);
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+  }
+  .mockup-file::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  .mockup-file.text-muted::before {
+    background: var(--text-muted);
+  }
+
+  /* Process column / AI Orb */
+  .process-col {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .ai-orb {
+    position: relative;
+    width: 60px; height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .orb-core {
+    width: 20px; height: 20px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--accent);
+  }
+
+  .orb-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 50%;
+    animation: spin 4s linear infinite;
+  }
+
+  .ring-2 {
+    inset: -15px;
+    border-color: rgba(59, 130, 246, 0.3);
+    border-style: dashed;
+    animation: spin 6s linear infinite reverse;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Connecting lines */
+  .connection-line {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 4px;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  .line-1 { left: -60px; }
+  .line-2 { right: -60px; }
+  
+  .connection-line path {
+    stroke: rgba(255,255,255,0.1);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 5 5;
+    animation: dashLine 20s linear infinite;
+  }
+
+  @keyframes dashLine {
+    to { stroke-dashoffset: -400; }
   }
 
   @media (max-width: 768px) {
-    .btn-primary {
-      padding: 14px 28px;
-      font-size: 16px;
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .hero-visual {
+      perspective: none;
+    }
+    .dashboard-mockup {
+      transform: none !important;
+      overflow-x: auto;
+    }
+    .mockup-body {
+      padding: var(--space-md);
+      min-width: 600px; /* Force scroll on small devices to view parts rather than compress */
     }
   }
 </style>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Reveal Animations
+    const tl = gsap.timeline();
+
+    tl.to('.hero-content', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      delay: 0.2
+    })
+    .to('.hero-visual', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out'
+    }, "-=0.6");
+
+    // Interactive Parallax on Desktop
+    const mockup = document.querySelector('.dashboard-mockup');
+    const heroSection = document.getElementById('hero');
+
+    if (mockup && heroSection && window.innerWidth > 768) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+        const yAxis = (window.innerHeight / 2 - e.pageY) / 40;
+        // Keep the 15deg base X rotation from CSS
+        mockup.style.transform = `rotateY(${xAxis}deg) rotateX(${15 + yAxis}deg)`;
+      });
+
+      heroSection.addEventListener('mouseleave', () => {
+        mockup.style.transform = `rotateY(0deg) rotateX(15deg)`;
+      });
+    }
+    
+    // Smooth scroll demo button target placeholder
+    document.getElementById('btn-demo')?.addEventListener('click', () => {
+       const demoSection = document.getElementById('features') || document.getElementById('how-it-works');
+       demoSection?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>

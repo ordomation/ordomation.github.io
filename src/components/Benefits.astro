@@ -13,8 +13,9 @@
             <path d="M12 6v6l4 2" class="clock-hand"></path>
           </svg>
         </div>
-        <h3 class="benefit-title">Time</h3>
-        <p class="benefit-desc muted">Hours back every week. Automated data extraction and categorization.</p>
+        <div class="benefit-metric gradient-text">8 <span class="metric-unit">hrs</span></div>
+        <h3 class="benefit-title">Time Saved</h3>
+        <p class="benefit-desc muted">Back every month. Redirect your focus from data entry to business growth.</p>
       </div>
 
       <!-- Card 2: Clarity -->
@@ -26,8 +27,9 @@
             <polyline points="3 16 9 10 14 14 21 5" class="graph-line"></polyline>
           </svg>
         </div>
-        <h3 class="benefit-title">Clarity</h3>
-        <p class="benefit-desc muted">Complete financial overview. Everything structured and searchable instantly.</p>
+        <div class="benefit-metric gradient-text">10 <span class="metric-unit">min</span></div>
+        <h3 class="benefit-title">VAT Prep</h3>
+        <p class="benefit-desc muted">To prep your quarterly VAT. Your accountant gets perfectly structured files.</p>
       </div>
 
       <!-- Card 3: Control -->
@@ -43,8 +45,9 @@
             <line x1="2" y1="12" x2="4" y2="12"></line>
           </svg>
         </div>
-        <h3 class="benefit-title">Control</h3>
-        <p class="benefit-desc muted">Better decisions built on structured, error-free accounting foundations.</p>
+        <div class="benefit-metric gradient-text">0 <span class="metric-unit">missing</span></div>
+        <h3 class="benefit-title">Lost Receipts</h3>
+        <p class="benefit-desc muted">Missing invoices. Every expense is instantly captured, categorized, and vaulted.</p>
       </div>
 
     </div>
@@ -112,9 +115,31 @@
   }
 
   .benefit-desc {
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.6;
     margin-bottom: 0;
+  }
+
+  .benefit-metric {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .metric-unit {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--accent);
+    -webkit-text-fill-color: var(--accent);
   }
 
   /* SVG Animation preparation */

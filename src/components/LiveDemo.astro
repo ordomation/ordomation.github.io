@@ -1,0 +1,334 @@
+---
+---
+<section class="section live-demo-section" id="livedemo">
+  <div class="container livedemo-container">
+    <div class="livedemo-header">
+      <h2>Watch it <span class="gradient-text">work.</span></h2>
+    </div>
+
+    <div class="demo-stage">
+      <!-- Left: Email Panel -->
+      <div class="demo-panel panel-left glass-panel">
+        <div class="panel-header">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span class="panel-title">Inbox</span>
+          <span class="badge">3</span>
+        </div>
+        <div class="panel-body email-list">
+          <div class="email-item">
+            <div class="email-icon">PDF</div>
+            <div class="email-details">
+              <div class="email-sender">Invoice from Netto</div>
+              <div class="email-time muted">10:42 AM</div>
+            </div>
+          </div>
+          <div class="email-item">
+            <div class="email-icon">PDF</div>
+            <div class="email-details">
+              <div class="email-sender">AWS receipt</div>
+              <div class="email-time muted">08:15 AM</div>
+            </div>
+          </div>
+          <div class="email-item">
+            <div class="email-icon">JPG</div>
+            <div class="email-details">
+              <div class="email-sender">Taxi kvittering</div>
+              <div class="email-time muted">Yesterday</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Processing Area -->
+      <div class="demo-process">
+        <!-- Connecting arrow line (animated SVG) -->
+        <svg class="process-arrow" width="200" height="100" viewBox="0 0 200 100" preserveAspectRatio="none">
+           <path d="M0,50 L80,50 C120,50 140,50 200,50" class="arrow-path" />
+           <polygon points="190,40 200,50 190,60" class="arrow-head" />
+        </svg>
+
+        <div class="logic-core">
+          <div class="logic-orb"></div>
+          <span class="logic-label muted">AI Extraction</span>
+        </div>
+      </div>
+
+      <!-- Right: Destination Panel -->
+      <div class="demo-panel panel-right glass-panel">
+        <div class="panel-header header-success">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          <span class="panel-title">Q1/2026/Expenses</span>
+        </div>
+        <div class="panel-body folder-list">
+          <div class="folder-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="folder-filename">2026-02-15_Netto_84DKK.pdf</span>
+          </div>
+          <div class="folder-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="folder-filename">2026-02-15_AWS_240DKK.pdf</span>
+          </div>
+          <div class="folder-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span class="folder-filename">2026-02-14_Taxi_180DKK.jpg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .live-demo-section {
+    padding: 120px 0;
+    background-color: var(--bg-secondary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .livedemo-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .demo-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .demo-panel {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    /* GSAP init */
+    opacity: 0;
+  }
+  .panel-left { transform: translateX(-40px); }
+  .panel-right { transform: translateX(40px); }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .header-success {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+    border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+  }
+
+  .panel-title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .badge {
+    margin-left: auto;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 99px;
+  }
+
+  .panel-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Email Items */
+  .email-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    /* GSAP init */
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .email-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(236, 72, 153, 0.1);
+    color: var(--gradient-3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .email-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .email-sender {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .email-time {
+    font-size: 12px;
+  }
+
+  /* Folder Items */
+  .folder-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    /* GSAP init */
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .folder-filename {
+    font-family: monospace;
+    font-size: 13px;
+  }
+
+  /* Center Logic */
+  .demo-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    position: relative;
+    /* GSAP init */
+    opacity: 0;
+  }
+
+  .logic-core {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+  }
+
+  .logic-orb {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+    /* Pulse handled by GSAP */
+  }
+
+  .logic-label {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .process-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    z-index: 1;
+  }
+
+  .arrow-path {
+    stroke: var(--text-muted);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200; /* GSAP will animate */
+  }
+
+  .arrow-head {
+    fill: var(--text-muted);
+    opacity: 0; /* GSAP will animate */
+  }
+
+  @media (max-width: 900px) {
+    .demo-stage {
+      flex-direction: column;
+      gap: 0;
+    }
+    .demo-process {
+      width: 100%;
+      height: 120px;
+    }
+    .process-arrow {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .panel-left, .panel-right {
+      width: 100%;
+      transform: translateY(40px); /* vertical translation instead */
+      max-width: unset;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.demo-stage',
+        start: 'top 60%',
+        end: 'bottom 20%',
+        // scrub: true, // You can use scrub for tight scroll linking, or let it play naturally 
+        toggleActions: "play none none none" 
+      }
+    });
+
+    const isMobile = window.innerWidth <= 900;
+    const initialSlideLeft = isMobile ? { y: 0 } : { x: 0 };
+    const initialSlideRight = isMobile ? { y: 0 } : { x: 0 };
+
+    // 1. Email inbox panel appears
+    tl.to('.panel-left', { opacity: 1, ...initialSlideLeft, duration: 0.6, ease: 'power2.out' })
+    // 2. 3 email items slide in
+      .to('.email-item', { opacity: 1, x: 0, duration: 0.4, stagger: 0.15, ease: 'back.out(1.2)' })
+    // 3. AI processing orb appears
+      .to('.demo-process', { opacity: 1, duration: 0.5 }, "-=0.2")
+    // 4. Arrow/connection animates
+      .to('.arrow-path', { strokeDashoffset: 0, duration: 1, ease: 'power1.inOut' }, "-=0.3")
+      .to('.arrow-head', { opacity: 1, duration: 0.2 }, "-=0.2")
+    // 5. Processing orb pulses
+      .to('.logic-orb', { 
+        boxShadow: '0 0 20px 10px rgba(99, 102, 241, 0.4)', 
+        scale: 1.1, 
+        duration: 0.3, 
+        yoyo: true, 
+        repeat: 3 
+      }, "-=0.8")
+    // 6. Folder structure builds itself
+      .to('.panel-right', { opacity: 1, ...initialSlideRight, duration: 0.6, ease: 'power2.out' }, "-=0.2")
+    // 7. Files animate into folders
+      .to('.folder-item', { opacity: 1, x: 0, duration: 0.4, stagger: 0.15, ease: 'back.out(1.2)' });
+  });
+</script>
