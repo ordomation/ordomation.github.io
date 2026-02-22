@@ -10,22 +10,21 @@
       </div>
 
       <div class="waitlist-content">
-        <h2>Ready to get your <span class="gradient-text">weekends back?</span></h2>
-        <p class="waitlist-subtitle muted">Join the waitlist. We are onboarding new specific beta users weekly.</p>
+        <h2>Ready to stop sorting <span class="gradient-text">invoices?</span></h2>
+        <p class="waitlist-subtitle muted">Join the waitlist. Early access starts Q2 2026.</p>
         
-        <form class="waitlist-form" id="waitlistForm">
+        <!-- TODO: The exact webhook URL will be configured later -->
+        <form class="waitlist-form" id="waitlistForm" action="https://192.168.0.195:30678/webhook/waitlist" method="POST">
           <div class="input-group">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="input-icon" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <input type="email" id="emailInput" placeholder="Enter your work email" required aria-label="Work Email Address">
-            <button type="submit" class="btn btn-primary waitlist-btn">Join Waitlist</button>
+            <input type="email" name="email" id="emailInput" placeholder="your@email.com" required aria-label="Email Address">
+            <button type="submit" class="btn btn-primary waitlist-btn">Join Now</button>
           </div>
           <div class="form-status" id="formStatus"></div>
         </form>
         
         <div class="waitlist-footer muted">
-          <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% GDPR Compliant</span>
-          <span class="dot">•</span>
-          <span>No credit card required</span>
+          <span>No spam. Unsubscribe anytime. Danish-hosted.</span>
         </div>
       </div>
     </div>
@@ -243,6 +242,10 @@
     });
 
     // Form logic mock for demonstration
+    // Since we now use a real form action, we comment out the mock preventDefault to let it POST.
+    // However, if we want to show a success state without leaving the page, we'd need fetch().
+    // For now we just let the native form submit happen.
+    /*
     const form = document.getElementById('waitlistForm');
     const status = document.getElementById('formStatus');
     const input = document.getElementById('emailInput') as HTMLInputElement;
@@ -265,5 +268,6 @@
         }
       });
     }
+    */
   });
 </script>

@@ -17,28 +17,38 @@
         </div>
       </div>
 
-      <!-- Right side: Origin Story -->
+      <!-- Right side: Origin Story & Founder Bios -->
       <div class="story-content">
-        <p class="story-text">
-          We built GreenGuard Automation from the ground up, scaling it into a successful venture. But as we grew, we realized that administrative overhead—specifically managing receipts, matching invoices, and prepping VAT—was killing our momentum.
-        </p>
-        <p class="story-text">
-          We spent our weekends doing data entry instead of building our business. We tried existing tools, but they were either too complex, too expensive, or just didn't work reliably with Danish invoices.
-        </p>
-        <p class="story-text highlight">
-          So we built Ordomation. The tool we desperately needed for our own company.
-        </p>
-
         <div class="founders-signatures">
           <div class="signature-block">
             <h4 class="founder-name">Thue Tonnesen</h4>
-            <span class="founder-role muted">Co-Founder, Infrastructure</span>
+            <span class="founder-role muted">Infrastructure</span>
+            <div class="founder-socials">
+              <a href="https://www.linkedin.com/in/thue-tonnesen-414475245/" target="_blank" rel="noopener noreferrer" class="social-link muted">LinkedIn</a>
+              <a href="https://github.com/Thue-T" target="_blank" rel="noopener noreferrer" class="social-link muted">GitHub</a>
+            </div>
+            <p class="story-text mt-4">
+              "Server architect who built infrastructure processing 14,000+ emails."
+            </p>
           </div>
+          
           <div class="signature-block">
-            <h4 class="founder-name">Joachim Ovesen</h4>
-            <span class="founder-role muted">Co-Founder, Strategy</span>
+            <h4 class="founder-name">Joachim Gensmann</h4>
+            <span class="founder-role muted">Strategy</span>
+            <div class="founder-socials">
+              <a href="https://www.linkedin.com/in/joachim-gensmann/" target="_blank" rel="noopener noreferrer" class="social-link muted">LinkedIn</a>
+            </div>
+            <p class="story-text mt-4">
+              "Product thinker who ensures Ordomation solves real problems."
+            </p>
           </div>
         </div>
+        
+        <hr class="story-divider" />
+
+        <p class="story-text highlight">
+          "Friends since HTX Haderslev. We saw small businesses struggle with manual processes that big companies automate away. Ordomation is our answer."
+        </p>
       </div>
 
     </div>
@@ -147,9 +157,11 @@
   .founders-signatures {
     display: flex;
     gap: var(--space-2xl);
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .signature-block {
+    flex: 1;
   }
 
   .founder-name {
@@ -160,9 +172,33 @@
 
   .founder-role {
     font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: var(--space-sm);
   }
+
+  .founder-socials {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .social-link {
+    font-size: 14px;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+  
+  .social-link:hover {
+    color: var(--accent);
+  }
+
+  .story-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: var(--space-2xl) 0;
+  }
+
+  .mt-4 { margin-top: 1rem; }
 
   @media (max-width: 900px) {
     .story-grid {

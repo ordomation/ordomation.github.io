@@ -8,6 +8,35 @@ Transform the current Ordomation landing page into an **elite conversion machine
 
 ---
 
+## CRITICAL: Business Context (READ THIS FIRST)
+
+**Ordomation** is the product being built. It is an AI-powered document automation service for Danish small businesses.
+
+**The Founders:**
+- **Thue Tonnesen** - Co-Founder, Infrastructure
+  - LinkedIn: https://www.linkedin.com/in/thue-tonnesen-414475245/
+  - GitHub: https://github.com/Thue-T
+  - Bio: "Server architect who built infrastructure processing 14,000+ emails."
+
+- **Joachim Gensmann** - Co-Founder, Strategy
+  - LinkedIn: https://www.linkedin.com/in/joachim-gensmann/
+  - Bio: "Product thinker who ensures Ordomation solves real problems."
+
+**Client Businesses (NOT founded by the Ordomation team):**
+- **TST Maskiner** - Machine/equipment business
+- **Baskas** - Food/takeaway business
+- **GreenGuard** - Environmental/garden business
+- **Glare** - Fashion/retail business
+
+These are **clients** that Ordomation helps automate. The founders did NOT build these businesses. They built Ordomation to help businesses like these.
+
+**DO NOT make these mistakes:**
+- Never say "We built GreenGuard" or "our company GreenGuard"
+- Never write "Joachim Ovesen" - the correct name is "Joachim Gensmann"
+- Never confuse client businesses with Ordomation itself
+
+---
+
 ## CRITICAL: Instant Feedback Workflow
 
 **You MUST use visual feedback for this task:**
